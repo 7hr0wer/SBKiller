@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace SBKiller
 {
@@ -21,6 +22,11 @@ namespace SBKiller
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Thread thread1 = new Thread(new ThreadStart(Thread1));
+            thread1.Start();  
+        }
+        private void Thread1()
+        {
             string a = textBox1.Text;
             bool i = IsNumber(a);
             if (a == "")
@@ -29,30 +35,32 @@ namespace SBKiller
             }
             else
             {
-                if (i == false)
+                try
                 {
-                    MessageBox.Show("WDNMD！请输入正确的QQ号！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string b = HttpGet("http://api.qb-api.com/qbtxt-api.php?qq=" + a);
+                    int index = b.LastIndexOf('没');
+                    if (index >= 0)
+                    {
+                        textBox2.Text = "没有查询到" + a + "的手机号！";
+                    }
+                    else if (i == false)
+                    {
+                        MessageBox.Show("WDNMD！请输入正确的QQ号！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string strtempa = "e:";
+                        string strtempb = "p";
+                        int IndexofA = b.IndexOf(strtempa);
+                        int IndexofB = b.IndexOf(strtempb);
+                        string d = b.Substring(IndexofA + 1, IndexofB - IndexofA - 1);
+                        d = d.Substring(1, d.Length - 1);
+                        textBox2.Text = d;
+                    }
                 }
-                else
+                catch
                 {
-                    try
-                    {
-                        string b = HttpGet("http://api.qb-api.com/qbtxt-api.php?qq=" + a);
-                        string c = System.Text.RegularExpressions.Regex.Replace(b, @"[^0-9]+", "");
-                        if (c != "")
-                        {
-                            string r = System.Text.RegularExpressions.Regex.Replace(c, a, "");
-                            textBox2.Text = r;
-                        }
-                        else
-                        {
-                            textBox2.Text = "数据库中没有记录！";
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("无法连接接口！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("无法连接接口！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -115,7 +123,7 @@ namespace SBKiller
                 }
                 else
                 {
-                    string b = "http://1cdsw.top/index.php?hm=" + a + "&ok=";
+                    string b = "http://hz.o3f.cc/index.php?hm=" + a + "&ok=";
                     webBrowser1.Navigate(b);
                     button3.Text = "停止轰炸";
                     textBox3.ReadOnly = true;
@@ -149,6 +157,11 @@ namespace SBKiller
             {
                 this.button3_Click(sender, e);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/7hr0wer/SBKiller/");
         }
     }
 }

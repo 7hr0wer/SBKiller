@@ -1,4 +1,3 @@
-C:\Users\Administrator\source\repos\SBKiller\SBKiller\obj\Debug\SBKiller.csprojAssemblyReference.cache
 C:\Users\Administrator\source\repos\SBKiller\SBKiller\obj\Debug\SBKiller.Form1.resources
 C:\Users\Administrator\source\repos\SBKiller\SBKiller\obj\Debug\SBKiller.Properties.Resources.resources
 C:\Users\Administrator\source\repos\SBKiller\SBKiller\obj\Debug\SBKiller.csproj.GenerateResource.cache
@@ -8,3 +7,4 @@ C:\Users\Administrator\source\repos\SBKiller\SBKiller\bin\Debug\SBKiller.exe
 C:\Users\Administrator\source\repos\SBKiller\SBKiller\bin\Debug\SBKiller.pdb
 C:\Users\Administrator\source\repos\SBKiller\SBKiller\obj\Debug\SBKiller.exe
 C:\Users\Administrator\source\repos\SBKiller\SBKiller\obj\Debug\SBKiller.pdb
+C:\Users\Administrator\source\repos\SBKiller\SBKiller\obj\Debug\SBKiller.csproj.AssemblyReference.cache

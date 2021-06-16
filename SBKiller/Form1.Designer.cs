@@ -47,6 +47,7 @@ namespace SBKiller
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -213,11 +214,22 @@ namespace SBKiller
             this.label6.Size = new System.Drawing.Size(0, 12);
             this.label6.TabIndex = 11;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(111, 107);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 23);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "下载源码";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 228);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox1);
@@ -262,6 +274,7 @@ namespace SBKiller
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button5;
     }
 }
 
